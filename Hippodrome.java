@@ -11,14 +11,22 @@ public class Hippodrome {
     public static void main(String[] args) {
         Hippodrome begin = new Hippodrome();
         game = begin;
-        Horse Jess,Bill,Coll;
-        Jess = new Horse("Jess",3,0);
-        Bill = new Horse("Bill",3,0);
-        Coll = new Horse("Coll",3,0);
+        Horse h1,h2,h3,h4,h5,h6,h7;
+        h1 = new Horse("Jess",3,0);
+        h2 = new Horse("Bill",3,0);
+        h3 = new Horse("Coll",3,0);
+        h4 = new Horse("Lucky",3,0);
+        h5 = new Horse("Sud",3,0);
+        h6 = new Horse("Cool",3,0);
+        h7 = new Horse("Black",3,0);
 
-        horses.add(Bill);
-        horses.add(Coll);
-        horses.add(Jess);
+        horses.add(h1);
+        horses.add(h2);
+        horses.add(h3);
+        horses.add(h4);
+        horses.add(h5);
+        horses.add(h6);
+        horses.add(h7);
 
         game.run();
     }
@@ -38,23 +46,23 @@ public class Hippodrome {
         printWinner();
     }
     public void move(){
-        for(int i=0;i<3;i++){
+        for(int i=0;i<horses.size();i++){
             horses.get(i).move();
         }
     }
     public void print(){
-        for(int i=0;i<3;i++){
+        for(int i=0;i<horses.size();i++){
             horses.get(i).print();
 
         }
-        System.out.println("=========================================================================================");
-        System.out.println();
-        System.out.println();
+        System.out.println("========================================================================================================================");
+        //System.out.println();
+        //System.out.println();
 
     }
     public Horse getWinner(){
         Horse win = horses.get(0);
-        for(int i=1;i<3;i++){
+        for(int i=1;i<horses.size();i++){
             if(win.getDistance()<horses.get(i).getDistance()) {
                 win = horses.get(i);
             }
